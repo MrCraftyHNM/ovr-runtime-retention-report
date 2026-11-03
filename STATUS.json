@@ -1,9 +1,9 @@
 ﻿{
     "document":  "OVRServer retention report",
-    "status":  "active",
-    "since_utc":  "2026-11-03T19:58:03Z",
+    "status":  "deprecated",
+    "since_utc":  "2026-11-03T19:58:45Z",
     "by":  "third-party-contributor",
-    "reason":  "withdrawal test complete",
+    "reason":  "final mechanism verification",
     "policy":  "Any contributor may deprecate this report by setting status to deprecated with a reason, in one commit. Deprecation is content level and does not require the gist owner. Deleting the gist itself remains owner-only, because GitHub only allows the owner to delete a gist.",
     "history":  [
                     {
@@ -33,6 +33,13 @@
                         "to":  "active",
                         "by":  "third-party-contributor",
                         "reason":  "withdrawal test complete"
+                    },
+                    {
+                        "at_utc":  "2026-11-03T19:58:45Z",
+                        "from":  "active",
+                        "to":  "deprecated",
+                        "by":  "third-party-contributor",
+                        "reason":  "final mechanism verification"
                     }
                 ]
 }
