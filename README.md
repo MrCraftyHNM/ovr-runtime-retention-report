@@ -7,6 +7,7 @@ A bug report against Meta Horizon PC, runtime 208.0.0.84.535, revision 70b5b1dfe
 ## Read this first
 
 - [report/README.md](report/README.md) is the entry point, symptom, numbers table and reproduction in under a minute
+- [report/REPRODUCE.md](report/REPRODUCE.md) is the full manual recreation, step by step, for anyone who wants to see it on their own machine, with a ready sampling script
 - [report/report.json](report/report.json) is the machine-readable layer, six claims with metric, value, method, evidence and falsifier each
 - [report/meta-bug-report.md](report/meta-bug-report.md) is the full write-up with environment, expected behaviour and retest matrix
 - [report/meta-submission-pointer.md](report/meta-submission-pointer.md) is optional, the short text to paste if someone chooses to file it with Meta

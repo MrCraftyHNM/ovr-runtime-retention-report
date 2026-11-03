@@ -9,6 +9,9 @@ $publish = @(
   (Join-Path $Root 'report.json'),
   (Join-Path $Root 'meta-bug-report.md'),
   (Join-Path $Root 'submission-message.md'),
+  (Join-Path $Root 'meta-submission-pointer.md'),
+  (Join-Path $Root 'REPRODUCE.md'),
+  (Join-Path $Root 'reproduce-sample.ps1'),
   (Join-Path $Root 'evidence\stop-records.txt'),
   $StampPath
 )
