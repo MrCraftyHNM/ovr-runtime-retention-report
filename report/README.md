@@ -2,6 +2,9 @@
 
 **Status:** active since 2026-11-03T19:58:47Z because verification complete
 
+**Repository mirror:** https://github.com/MrCraftyHNM/ovr-runtime-retention-report
+**Published gist:** https://gist.github.com/MrCraftyHNM/a20aa1a65ca6cf4c05293e45779bb280
+
 For a support agent or an automated triage pipeline. Read this page first, it has everything needed to reproduce and rank the issue without a log request.
 
 ## The symptom in one line
