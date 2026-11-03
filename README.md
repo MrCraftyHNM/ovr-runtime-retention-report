@@ -12,7 +12,9 @@ A bug report against Meta Horizon PC, runtime 208.0.0.84.535, revision 70b5b1dfe
 - [report/submission-message.md](report/submission-message.md) is the text submitted to Meta
 - [report/evidence/stop-records.txt](report/evidence/stop-records.txt) holds the six verified stop records
 
-Published copy of the same content: https://gist.github.com/MrCraftyHNM/24fa2e2fb750db41cf94fbbcaec7c618
+Published copy of the same content: https://gist.github.com/MrCraftyHNM/a20aa1a65ca6cf4c05293e45779bb280
+
+Repository: https://github.com/MrCraftyHNM/ovr-runtime-retention-report
 
 ## Headline numbers
 

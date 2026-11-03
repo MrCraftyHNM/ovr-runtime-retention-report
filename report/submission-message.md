@@ -1,6 +1,6 @@
-# Submission message, Meta Horizon PC / OVRServer retention and lifecycle
+﻿# Submission message, Meta Horizon PC / OVRServer retention and lifecycle
 
-Submit through Meta Horizon PC, Help, Report a problem, and post the short version on the Meta Community Forums PC VR section with the gist link. Attach the three files listed at the end. No absolute user paths and no hardware serials appear in this text or in the attachments.
+Submit through Meta Horizon PC, Help, Report a problem, and post the short version on the Meta Community Forums PC VR section with the gist link. Public copy, also mirrored in a repository, `https://gist.github.com/MrCraftyHNM/a20aa1a65ca6cf4c05293e45779bb280` and `https://github.com/MrCraftyHNM/ovr-runtime-retention-report`. Attach the three files listed at the end. No absolute user paths and no hardware serials appear in this text or in the attachments.
 
 ---
 
@@ -49,3 +49,4 @@ Logs are available on request, including the 22 hour `Service_*.txt` generation 
 ## Short version, for a forum post
 
 If you close the Meta Link window on a PC, the VR runtime does not close with it. `OVRServer_x64` stays, and if you end it in Task Manager the service starts a new one within about two seconds, so a normal user cannot stop it. On my machine one 21.9 hour session grew it to 5.8 GB private and 2.7 GB working set, and when the session ended it gave back 4.1 percent, holding about 2.5 GB with nothing attached. Growth is confined to streaming hours, idle hours are flat. This is on runtime 208.0.0.84.535 and it looks hardware-independent, since the retained memory is private to the process and the restart is done by the service. Stopping the service drops everything to zero, so the block is real and recoverable, just never recovered. Reported with build fingerprint and stop records.
+
