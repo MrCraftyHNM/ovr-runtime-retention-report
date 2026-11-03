@@ -1,9 +1,24 @@
-{
-  "document": "OVRServer retention report",
-  "status": "active",
-  "since_utc": "2026-11-03T00:00:00Z",
-  "by": "initial",
-  "reason": "published for triage",
-  "policy": "Any contributor may deprecate this report by setting status to deprecated with a reason, in one commit. Deprecation is content level and does not require the gist owner. Deleting the gist itself remains owner-only, because GitHub only allows the owner to delete a gist.",
-  "history": []
+﻿{
+    "document":  "OVRServer retention report",
+    "status":  "active",
+    "since_utc":  "2026-11-03T19:57:06Z",
+    "by":  "test-contributor",
+    "reason":  "mechanism test complete, report still active",
+    "policy":  "Any contributor may deprecate this report by setting status to deprecated with a reason, in one commit. Deprecation is content level and does not require the gist owner. Deleting the gist itself remains owner-only, because GitHub only allows the owner to delete a gist.",
+    "history":  [
+                    {
+                        "at_utc":  "2026-11-03T19:57:06Z",
+                        "from":  "active",
+                        "to":  "deprecated",
+                        "by":  "test-contributor",
+                        "reason":  "mechanism test, no real withdrawal"
+                    },
+                    {
+                        "at_utc":  "2026-11-03T19:57:06Z",
+                        "from":  "deprecated",
+                        "to":  "active",
+                        "by":  "test-contributor",
+                        "reason":  "mechanism test complete, report still active"
+                    }
+                ]
 }

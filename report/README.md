@@ -1,6 +1,8 @@
-# README, OVRServer retention report
+﻿# README, OVRServer retention report
 
-**Status:** active
+> DEPRECATED. This report is withdrawn. Do not act on it without reading STATUS.json for the reason and the superseding reference.
+
+**Status:** active since 2026-11-03T19:57:06Z because mechanism test complete, report still active
 
 For a support agent or an automated triage pipeline. Read this page first, it has everything needed to reproduce and rank the issue without a log request.
 
