@@ -1,0 +1,25 @@
+﻿{
+    "captured_at_utc":  "2026-11-03T19:42:51Z",
+    "runtime_file_ver":  null,
+    "runtime_build":  "208.0.0.84.535 rev 70b5b1dfe187",
+    "runtime_hash":  "4ad07e2f65b66a7e",
+    "launcher_file_ver":  "208.0.0.84.535",
+    "launcher_hash":  "6c6ebaeb387d7ec0",
+    "client_file_ver":  "0.1.0",
+    "client_hash":  "f3ab22a21b1fb429",
+    "os_product":  "Windows 10 Pro",
+    "os_display_ver":  "25H2",
+    "os_build":  "26200.9711",
+    "service_start":  "Manual",
+    "service_state":  "Stopped",
+    "service_path":  "\"%ProgramFiles%\\Meta Horizon\\Support\\oculus-runtime\\OVRServiceLauncher.exe\"",
+    "gpu":  [
+                "Meta Virtual Monitor | driver 15.52.32.370 | VideoController1",
+                "AMD Radeon RX 7600M XT | driver 32.0.32015.7029 | VideoController2",
+                "AMD Radeon 780M Graphics | driver 32.0.32015.7029 | VideoController3"
+            ],
+    "newest_log":  "Service_2026-11-03_01.55.42.txt | 515180 B | 2026-11-03 02:03:22",
+    "script_autostop":  "537f395c5cc7635b",
+    "script_eject_ab":  null,
+    "script_extract":  null
+}

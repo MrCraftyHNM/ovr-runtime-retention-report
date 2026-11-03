@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "generated_utc": "2026-11-03T19:40:00Z",
+  "document_kind": "bug_report",
+  "subject": "OVRServer_x64 keeps gigabytes after the Meta Link window closes, and OVRService restarts it within seconds, on any GPU",
+  "product": {
+    "vendor": "Meta",
+    "product": "Meta Horizon PC",
+    "component": "Oculus VR Runtime Service (OVRService) supervising OVRServer_x64.exe"
+  },
+  "build": {
+    "runtime_version": "208.0.0.84.535",
+    "revision": "70b5b1dfe187",
+    "ovrserver_sha256_prefix": "4ad07e2f65b66a7e",
+    "launcher_sha256_prefix": "6c6ebaeb387d7ec0",
+    "os": "Windows 11 10.0.26200.9711",
+    "gpu_driver": "32.0.32015.7029",
+    "service_start_mode": "Manual"
+  },
+  "hardware_disclaimer": "Measured on one hybrid laptop with an external GPU. The defect mechanism is process lifetime plus process-private memory, so it is expected on any GPU. The external GPU is incidental and only made the lingering process visible in a vendor panel.",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Closing the Meta Link client does not stop the runtime. The service starts a new OVRServer_x64 within about 4 seconds and the service stays Running.",
+      "metric": "restart_latency_seconds",
+      "value": 4,
+      "unit": "s",
+      "method": "process start times before and after client exit, 3 observed cycles",
+      "evidence": "stop-records.txt, rows with trigger=client-exited",
+      "falsifier": "Close the client on any machine and observe OVRServer_x64 absent for more than 60 seconds."
+    },
+    {
+      "id": "C2",
+      "statement": "Memory is retained after the session ends. A 21.9 hour generation peaked at 5,781.3 MB private and 2,707.8 MB working set, and released 4.1 percent at teardown.",
+      "metric": "retained_working_set_mb",
+      "value": 2500,
+      "unit": "MB",
+      "method": "runtime's own [DxDiag] LogResourceUsage lines, 1313 samples at about one per minute",
+      "evidence": "mem-series.csv, mem-parsed.csv, hourly-mem.txt",
+      "falsifier": "Sample the same counters on a comparable session and see teardown return the process near its 210 MB cold-start footprint."
+    },
+    {
+      "id": "C3",
+      "statement": "Growth is confined to streaming hours. Five streaming hours added 4,467 MB; eighteen idle hours moved minus 165 MB.",
+      "metric": "growth_streaming_vs_idle_mb",
+      "value": 4467,
+      "unit": "MB over 5 h",
+      "method": "hourly delta of private bytes correlated with presence of ULL streaming frames",
+      "evidence": "hourly-mem.txt, lines-per-hour.txt",
+      "falsifier": "Observe sustained growth during an idle period with no client and no session."
+    },
+    {
+      "id": "C4",
+      "statement": "The runtime contradicts itself about encoder pressure. 26,016 dropped-frame warnings were logged while all 93 per-minute stats records report encoder_backups=0.",
+      "metric": "encoder_backup_warnings",
+      "value": 26016,
+      "unit": "count",
+      "method": "count of '[ull] Frame(s) N to M dropped due to encoder backup' against encoder_backups field in oculus_pc_xrs_stats_event",
+      "evidence": "top-signatures.txt",
+      "falsifier": "Produce a run where the counter tracks the warnings within an order of magnitude."
+    },
+    {
+      "id": "C5",
+      "statement": "The retained block is fully releasable. Stopping the service returns wsMB, privMB and gpuMB to zero and leaves only a 2 MB kernel context on the GPU.",
+      "metric": "stops_verified",
+      "value": 6,
+      "unit": "consecutive PASS records",
+      "method": "watcher records with before and after counters for working set, private bytes and GPU local memory",
+      "evidence": "stop-records.txt, rows with verdict=PASS",
+      "falsifier": "Stop the service and leave more than 1 MB attributable to the runtime."
+    },
+    {
+      "id": "C6",
+      "statement": "A normal user cannot stop the service. The service ACL grants interactive users no stop right, so Task Manager only ends the child that the supervisor replaces.",
+      "metric": "openprocess_terminate_result",
+      "value": 5,
+      "unit": "win32 error on service PID",
+      "method": "OpenProcess(PROCESS_TERMINATE) probe against the service and child PIDs, plus sc sdshow",
+      "evidence": "meta-bug-report.md, lifecycle section",
+      "falsifier": "Show an unelevated Stop-Service succeeding on this service."
+    }
+  ],
+  "reproduction": {
+    "prereq": "Meta Horizon PC installed, headset connected over Link, no developer tools",
+    "steps": [
+      "Open the Meta Link client and start a session",
+      "Play or stream for at least 30 minutes",
+      "Close the Meta Link window",
+      "Watch OVRServer_x64.exe in Task Manager: it should disappear and does not",
+      "Note its Working set; end the task and watch a replacement appear within about 2 seconds"
+    ],
+    "minimal_check_seconds": 60
+  },
+  "attachments": {
+    "meta-bug-report.md": "full write-up, environment, observed figures, expected behaviour, retest matrix",
+    "submission-message.md": "ready-to-paste report body and a short forum version",
+    "stop-records.txt": "six PASS stop records plus failed unelevated attempts",
+    "version-stamp.json": "machine-readable build fingerprint with hashes"
+  },
+  "raw_logs_policy": "The 22 hour Service_*.txt generation is not published. All figures above were extracted from it by script, and the extracted series ship as CSV so a reviewer can recheck without the log.",
+  "agent_contract": {
+    "for_automated_triage": "Read this file, not the prose. Each claim carries id, metric, value, method, evidence and falsifier. A claim without a source must be treated as unverified. Ask for the raw log only if a falsifier requires it.",
+    "human_summary": "Close the Link client, the VR runtime stays and keeps memory, and a normal user cannot stop it. Stopping the service releases everything, which proves the block is real.",
+    "versioning": "This file and the attachments are versioned together by the gist revision plus generated_utc. Re-read after any runtime update."
+  }
+}

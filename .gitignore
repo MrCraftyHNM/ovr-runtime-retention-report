@@ -1,0 +1,22 @@
+# Only for a future git mirror of this folder. A gist has no ignore semantics:
+# gh gist create uploads exactly the files named on the command line.
+# This file prevents accidental staging, it is not a security control.
+# The control is publish-check.ps1, which scans an explicit allowlist and refuses on a hit.
+
+logs/
+out/*.tmp
+*.log
+*.bak
+*.tmp
+Service_*.txt
+raw/
+.env
+.env.*
+
+# Published on purpose, listed so nobody assumes they are excluded:
+!report/README.md
+!report/report.json
+!report/meta-bug-report.md
+!report/submission-message.md
+!report/evidence/stop-records.txt
+!out/version-stamp.json

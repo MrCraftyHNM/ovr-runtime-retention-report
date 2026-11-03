@@ -1,0 +1,40 @@
+﻿02/11 01:16:21.089 [   22216] {INFO}    [xrstreaming] [V3] [arvr\libraries\xrstreaming\xrstreaming\detail\windows\RemoteHeadphones.cpp:284 pipeCallback] RemoteHeadphones: IPCMetrics: [7.531,12.413]9.882
+02/11 01:16:22.229 [   16984] {INFO}    [xrstreaming] [V3] [disco.ull_image_stream_producer] Total frames submitted to ULL: 1067, latest submitted frameId = 1068
+02/11 01:16:24.305 [   22260] {INFO}    [xrstreaming] [V3] [arvr\libraries\xrstreaming\xrstreaming\detail\windows\RemoteMic.cpp:288 remoteMicThreadLoop] RemoteMic: NetworkMetrics: [0.005,33.190]9.876
+02/11 01:16:24.444 [   23344] {DEBUG}   [RiftDML:HMDManager] EnumerationLoop: EnumerateHMDInterfaces returned - hmd0Valid=false, hmd1Valid=false
+02/11 01:16:24.444 [   23344] {DEBUG}   [RiftDML:HMDManager] No HMD enumerating
+02/11 01:16:24.444 [   23344] {INFO}    [DML:HMDNormal] HMD Reporting state change: {'State':'NotDetected','IsDetected':0,'IsReady':0,'Mode':'Unknown','IsWirelessReady':0,'IsRebooting':0,'IsFirmwareOutOfDate':0}
+02/11 01:16:24.444 [   23344] {DEBUG}   [RiftDML:HMDManager] EnumerationLoop: Beginning new iteration, resetting state...
+02/11 01:16:24.444 [   23344] {DEBUG}   [RiftDML:HMDManager] EnumerationLoop: HMD mutex acquired
+02/11 01:16:24.444 [   23344] {DEBUG}   [RiftDML:HMDManager] Waiting for HMD to enumerate...
+02/11 01:16:25.532 [   12256] {INFO}    [HW:Enumeration] Connected devices: 0 Camera(s)
+02/11 01:16:25.859 [   24928] {DEBUG}   [MessengerSession] ClientImpl.cpp:517 Client OCMS60UBVnloa18vjP3Tt4W sending PINGREQ
+02/11 01:16:25.972 [   24928] {DEBUG}   [MessengerSession] ClientImpl.cpp:517 Client OCMS60UBVnloa18vjP3Tt4W received PINGRESP
+02/11 01:16:26.089 [   22216] {INFO}    [xrstreaming] [V3] [arvr\libraries\xrstreaming\xrstreaming\detail\windows\RemoteHeadphones.cpp:284 pipeCallback] RemoteHeadphones: IPCMetrics: [7.178,12.415]9.882
+02/11 01:16:26.216 [    7400] {WARNING} [xrstreaming] [V3] [ull] Frame(s) 1355 to 1355 dropped due to encoder backup
+02/11 01:16:26.343 [    9972] {INFO}    [xrstreaming] [V3] [link.disco.mdns] DnsStartMulticastQuery status=0 priorHandleNonZero=true
+02/11 01:16:26.343 [    9972] {INFO}    [xrstreaming] [V3] [link.disco.mdns] queryThread_ heartbeat: sleeping 15s before next multicast query (lastStatus=0)
+02/11 01:16:27.230 [   16984] {INFO}    [xrstreaming] [V3] [disco.ull_image_stream_producer] Total frames submitted to ULL: 1427, latest submitted frameId = 1428
+02/11 01:16:29.059 [    6772] {INFO}    [xrstreaming] [V3] [disco.clock] Clock sync stats (server): Period: 10s, ReceivedInit: 10, ReceivedFinish: 10
+02/11 01:16:29.304 [   22260] {INFO}    [xrstreaming] [V3] [arvr\libraries\xrstreaming\xrstreaming\detail\windows\RemoteMic.cpp:288 remoteMicThreadLoop] RemoteMic: NetworkMetrics: [0.007,31.705]9.876
+02/11 01:16:30.402 [   15700] {WARNING} [Registry] Unable to read registry value. Registry value accessed: UseSystemProxy
+02/11 01:16:30.402 [   15700] {WARNING} [Registry] Unable to read registry value. Registry value accessed: UseSystemProxy
+02/11 01:16:30.529 [   15700] {DEBUG}   [FriendsList] Friends fetched successfully
+02/11 01:16:30.529 [   15700] {WARNING} [IpcRemoteHeadsetClient] mainThreadProcessQueue [ignoring broadcast type]: [PUSH]: FRIENDS_UPDATE
+02/11 01:16:30.529 [   15700] {WARNING} [IpcRemoteHeadsetClient] mainThreadProcessQueue [ignoring broadcast type]: [PUSH]: FRIENDS_UPDATE
+02/11 01:16:31.090 [   22216] {INFO}    [xrstreaming] [V3] [arvr\libraries\xrstreaming\xrstreaming\detail\windows\RemoteHeadphones.cpp:284 pipeCallback] RemoteHeadphones: IPCMetrics: [7.516,12.664]9.873
+02/11 01:16:32.238 [   16984] {INFO}    [xrstreaming] [V3] [disco.ull_image_stream_producer] Total frames submitted to ULL: 1788, latest submitted frameId = 1789
+02/11 01:16:32.676 [    3188] {WARNING} [OVRServer] Memory usage 988MB (exceeded 640MB)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: Process memory usage (PeakWorkingSetSize=1036812288, WorkingSetSize=1036427264, PagefileUsage=2469449728, PrivateUsage=2469449728)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: Adapter (LUID=0/85225, Description=AMD Radeon RX 7600M XT)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=7723397120, CurrentUsage=2929582080, AvailableForReservation=3995916288, CurrentReservation=0)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=7513865319, CurrentUsage=146788352, AvailableForReservation=3891150387, CurrentReservation=0)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: Adapter (LUID=0/77713, Description=AMD Radeon 780M Graphics)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=7931126477, CurrentUsage=4526080, AvailableForReservation=4099780966, CurrentReservation=0)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=0, CurrentUsage=0, AvailableForReservation=0, CurrentReservation=0)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: Adapter (LUID=0/136114, Description=AMD Radeon 780M Graphics)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=7931126477, CurrentUsage=4526080, AvailableForReservation=4099780966, CurrentReservation=0)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=0, CurrentUsage=0, AvailableForReservation=0, CurrentReservation=0)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: Adapter (LUID=0/85121, Description=Microsoft Basic Render Driver)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=7513865319, CurrentUsage=0, AvailableForReservation=3891150387, CurrentReservation=0)
+02/11 01:16:32.676 [    3188] {INFO}    [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=0, CurrentUsage=0, AvailableForReservation=0, CurrentReservation=0)

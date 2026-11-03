@@ -1,0 +1,25 @@
+﻿  26016  {WARNING} [xrstreaming] [V#] [ull] Frame(s) # to # dropped due to encoder backup
+  10504  {INFO} [DxDiag] LogResourceUsage: DXGI_MEMORY_SEGMENT_GROUP_LOCAL (Budget=#, CurrentUsage=#, AvailableForReservation=
+  10283  {DEBUG} [RichPresenceProvider_Heartbeat] Schedule Tick in: # seconds
+   5257  {DEBUG} [RiftDML:HMDManager] Waiting for HMD to enumerate...
+   5257  {DEBUG} [RiftDML:HMDManager] EnumerationLoop: Beginning new iteration, resetting state...
+   5257  {DEBUG} [RiftDML:HMDManager] EnumerationLoop: HMD mutex acquired
+   5256  {INFO} [DML:HMDNormal] HMD Reporting state change: {'State':'NotDetected','IsDetected':#,'IsReady':#,'Mode':'Unknown'
+   5256  {DEBUG} [RiftDML:HMDManager] EnumerationLoop: EnumerateHMDInterfaces returned - hmd#Valid=false, hmd#Valid=false
+   5256  {INFO} [xrstreaming] [V#] [link.disco.mdns] queryThread_ heartbeat: sleeping #s before next multicast query (lastStat
+   5256  {INFO} [xrstreaming] [V#] [link.disco.mdns] DnsStartMulticastQuery status=# priorHandleNonZero=true
+   5256  {DEBUG} [RiftDML:HMDManager] No HMD enumerating
+   4023  {WARNING} [Registry] Unable to read registry value. Registry value accessed: UseSystemProxy
+   2626  {INFO} [DxDiag] LogResourceUsage: Adapter (LUID=#/#, Description=AMD Radeon #M Graphics)
+   2613  {DEBUG} [MessengerSession] ClientImpl.cpp:# Client OCMS#UBVnloa#vjP#Tt#W received PINGRESP
+   2613  {DEBUG} [MessengerSession] ClientImpl.cpp:# Client OCMS#UBVnloa#vjP#Tt#W sending PINGREQ
+   1642  {WARNING} [IpcRemoteHeadsetClient] mainThreadProcessQueue [ignoring broadcast type]: [PUSH]: PROFILE_UPDATE
+   1565  {WARNING} [IpcRemoteHeadsetClient] mainThreadProcessQueue [ignoring broadcast type]: [PUSH]: DEVICE_LIST
+   1402  {INFO} [xrstreaming] [V#] [disco.clock] Clock sync stats (server): Period: #s, ReceivedInit: #, ReceivedFinish: #
+   1315  {INFO} [HW:Enumeration] Connected devices: # Camera(s)
+   1313  {INFO} [DxDiag] LogResourceUsage: Adapter (LUID=#/#, Description=AMD Radeon RX #M XT)
+   1313  {INFO} [DxDiag] LogResourceUsage: Adapter (LUID=#/#, Description=Microsoft Basic Render Driver)
+   1161  {INFO} [xrstreaming] [V#] [arvr\libraries\xrstreaming\xrstreaming\detail\windows\RemoteMic.cpp:# remoteMicThreadLoop]
+   1155  {WARNING} [IpcRemoteHeadsetClient] mainThreadProcessQueue [ignoring broadcast type]: [PUSH]: APP_TRACKER_UPDATE
+   1154  {INFO} [xrstreaming] [V#] [disco.ull_image_stream_producer] Total frames submitted to ULL: #, latest submitted frameI
+   1088  {INFO} [xrstreaming] [V#] [arvr\libraries\xrstreaming\xrstreaming\detail\windows\RemoteHeadphones.cpp:# pipeCallback]

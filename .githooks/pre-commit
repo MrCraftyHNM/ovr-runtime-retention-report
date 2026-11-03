@@ -1,0 +1,16 @@
+#!/bin/sh
+# Blocks a commit that contains sensitive material. Installed through core.hooksPath.
+# Requires git for Windows, which ships sh, and PowerShell 5.1 or later.
+ROOT="$(git rev-parse --show-toplevel)"
+SCANNER="$(dirname "$0")/../find-sensitive.ps1"
+if [ ! -f "$SCANNER" ]; then
+  echo "pre-commit: scanner not found at $SCANNER" >&2
+  exit 1
+fi
+powershell -NoProfile -ExecutionPolicy Bypass -File "$SCANNER" -Roots "$ROOT"
+STATUS=$?
+if [ $STATUS -ne 0 ]; then
+  echo "pre-commit blocked: sensitive material found. Fix the findings or move the file out of the tree." >&2
+  exit 1
+fi
+exit 0
