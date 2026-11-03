@@ -27,7 +27,7 @@ $s.since_utc = $entry.at_utc
 $s.by        = $By
 $s.reason    = $Reason
 $s.history   = @($s.history) + $entry
-$s | ConvertTo-Json -Depth 6 | Set-Content $state -Encoding UTF8
+[System.IO.File]::WriteAllText($state, (($s | ConvertTo-Json -Depth 6) + "`n"), (New-Object System.Text.UTF8Encoding($false)))
 
 if (Test-Path $readme) {
   $lines = Get-Content $readme
@@ -45,7 +45,8 @@ if (Test-Path $readme) {
   } else {
     $lines = @($lines | Where-Object { $_ -notmatch '^> DEPRECATED\.' })
   }
-  Set-Content $readme -Value $lines -Encoding UTF8
+  $clean = @(); foreach ($l in $lines) { if ($l -ne "" -or ($clean.Count -gt 0 -and $clean[-1] -ne "")) { $clean += $l } }
+  [System.IO.File]::WriteAllText($readme, (($clean -join "`n").TrimEnd() + "`n"), (New-Object System.Text.UTF8Encoding($false)))
 }
 
 Write-Host "status: $prev -> $Status by $By" -ForegroundColor Green
@@ -73,4 +74,5 @@ if (-not $NoCommit) {
   if ($commitExit -ne 0) { Write-Host 'commit failed, files left staged: run git status' -ForegroundColor Red; exit 1 }
   Write-Host ("committed: " + $msg) -ForegroundColor Green
 }
+
 

@@ -1,6 +1,4 @@
-﻿# README, OVRServer retention report
-
-
+# README, OVRServer retention report
 
 **Status:** active since 2026-11-03T19:58:47Z because verification complete
 
