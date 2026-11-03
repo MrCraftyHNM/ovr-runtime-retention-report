@@ -11,22 +11,26 @@ For a support agent or an automated triage pipeline. Read this page first, it ha
 
 Close the Meta Link window on a PC and the VR runtime does not close. `OVRServer_x64.exe` stays, keeps memory, and a normal user cannot stop it.
 
+## Steps leading up to the event, and which claim each one causes
+
+The sequence is S0 record the build, S1 measure the cold start, S2 start sampling, S3 stream, S4 close the client, S5 end the task, S6 try the unelevated stop, S7 idle control. Full commands and a sampler are in [REPRODUCE.md](REPRODUCE.md).
+
 ## Numbers, all measured on the reporting machine
 
-| Metric | Value |
-|---|---|
-| Runtime build | 208.0.0.84.535, revision 70b5b1dfe187 |
-| Peak private memory, one 21.9 hour generation | 5,781.3 MB |
-| Peak working set, same generation | 2,707.8 MB |
-| Working set held after session end | about 2,500 MB, for 90 minutes |
-| Released at session end | 236.4 MB, which is 4.1 percent |
-| Cold-start footprint, fresh process | 210 MB |
-| Growth in 5 streaming hours | plus 4,467 MB |
-| Movement in 18 idle hours | minus 165 MB |
-| Restart after client exit | about 4 seconds |
-| Restart after manual kill | about 2 seconds |
-| Dropped-frame warnings vs reported backups | 26,016 vs 0 in 93 samples |
-| Stops verified to release everything | 6 |
+| Metric | Value | Caused at |
+|---|---|---|
+| Runtime build | 208.0.0.84.535, revision 70b5b1dfe187 | S0 |
+| Peak private memory, one 21.9 hour generation | 5,781.3 MB | S3 |
+| Peak working set, same generation | 2,707.8 MB | S3 |
+| Working set held after session end | about 2,500 MB, for 90 minutes | S4 |
+| Released at session end | 236.4 MB, which is 4.1 percent | S4 |
+| Cold-start footprint, fresh process | 210 MB | S1 |
+| Growth in 5 streaming hours | plus 4,467 MB | S3 |
+| Movement in 18 idle hours | minus 165 MB | S7 |
+| Restart after client exit | about 4 seconds | S4 |
+| Restart after manual kill | about 2 seconds | S5 |
+| Dropped-frame warnings vs reported backups | 26,016 vs 0 in 93 samples | S3 |
+| Stops verified to release everything | 6 | S6 elevated |
 
 ## Files in this gist
 
