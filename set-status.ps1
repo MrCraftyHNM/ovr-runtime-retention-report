@@ -1,4 +1,4 @@
-param(
+﻿param(
   [Parameter(Mandatory = $true)]
   [ValidateSet('active', 'deprecated', 'superseded')]
   [string]$Status,
@@ -42,6 +42,8 @@ if (Test-Path $readme) {
   if ($Status -eq 'deprecated') {
     $notice = '> DEPRECATED. This report is withdrawn. Do not act on it without reading STATUS.json for the reason and the superseding reference.'
     if (-not ($lines -contains $notice)) { $lines = @($lines[0], '', $notice) + $lines[1..($lines.Count - 1)] }
+  } else {
+    $lines = @($lines | Where-Object { $_ -notmatch '^> DEPRECATED\.' })
   }
   Set-Content $readme -Value $lines -Encoding UTF8
 }
@@ -61,9 +63,14 @@ if (-not $NoCommit) {
     Write-Host 'No git repository here, skipped commit.' -ForegroundColor Yellow
     exit 0
   }
-  git -C $root add STATUS.json report/README.md | Out-Null
+  $eap = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+  git -C $root add STATUS.json report/README.md 2>$null | Out-Null
   $msg = "status: $Status"
   if ($Reason) { $msg = "$msg, $Reason" }
-  git -C $root commit -m $msg | Out-Null
+  git -C $root commit -m $msg 2>$null | Out-Null
+  $commitExit = $LASTEXITCODE
+  $ErrorActionPreference = $eap
+  if ($commitExit -ne 0) { Write-Host 'commit failed, files left staged: run git status' -ForegroundColor Red; exit 1 }
   Write-Host ("committed: " + $msg) -ForegroundColor Green
 }
+
