@@ -9,12 +9,24 @@ A bug report against Meta Horizon PC, runtime 208.0.0.84.535, revision 70b5b1dfe
 - [report/README.md](report/README.md) is the entry point, symptom, numbers table and reproduction in under a minute
 - [report/report.json](report/report.json) is the machine-readable layer, six claims with metric, value, method, evidence and falsifier each
 - [report/meta-bug-report.md](report/meta-bug-report.md) is the full write-up with environment, expected behaviour and retest matrix
-- [report/submission-message.md](report/submission-message.md) is the text submitted to Meta
+- [report/meta-submission-pointer.md](report/meta-submission-pointer.md) is the short pointer text filed with Meta
 - [report/evidence/stop-records.txt](report/evidence/stop-records.txt) holds the six verified stop records
 
 Published copy of the same content: https://gist.github.com/MrCraftyHNM/a20aa1a65ca6cf4c05293e45779bb280
 
 Repository: https://github.com/MrCraftyHNM/ovr-runtime-retention-report
+
+## Check it on your own machine, 60 seconds
+
+This is the whole test a stranger needs.
+
+1. Open the Meta Link client and start a session, any session, for at least a minute.
+2. Close the Meta Link window completely.
+3. Open Task Manager, Details tab, and look for `OVRServer_x64.exe`.
+4. If it is still there with a working set in the gigabytes, the behaviour described here applies to your machine too.
+5. End that task, and watch a replacement appear within about two seconds while `OVRService` stays Running.
+
+If the process disappears and stays gone, your build differs. Note your runtime version from `Settings, General` and say so, that is useful information rather than a contradiction.
 
 ## Headline numbers
 
